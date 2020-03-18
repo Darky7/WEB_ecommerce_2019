@@ -1,0 +1,53 @@
+{% block body %}
+    <div id="wrapper">
+        <div id="main">
+            <div class="inner">
+                <!-- Header -->
+                <header id="header">
+                    <a href="{{ path('index') }}" class="logo"><strong>LES BAGNOLES</strong></a>
+                    <ul class="icons">
+                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+                        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                </header>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="inner">
+
+                <!-- Search -->
+                <section id="search" class="alt">
+                    <form method="post" action="#">
+                        <input type="text" name="query" id="query" placeholder="Rechercher ... " />
+                    </form>
+                </section>
+                <!-- Menu -->
+                <nav id="menu">
+                    <header class="major">
+                        <h2>Menu</h2>
+                    </header>
+                    <ul>
+                        <li><a href="{{ path('index') }}">Accueil</a></li>
+                        <li><a href="{{ path('product') }}">Produits</a></li>
+                        <li>
+                            <span class="opener">Profil</span>
+                            <ul>
+                                <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                                <li><a href="{{ path('app_register') }}">Nouveau compte</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Panier</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li>
+                    </ul>
+                </nav>
+                <!-- Footer -->
+                <footer id="footer">
+                    <p class="copyright">&copy; E-commerce - Epitech - Les Bagnoles.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+{% endblock %}

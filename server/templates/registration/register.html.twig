@@ -1,0 +1,28 @@
+{% block head %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style_welcome.css') }}" />
+{% endblock %}
+
+{% block body %}
+
+    <div class="row pt-4">
+        <div id="logbox">
+            {{ form_start(form) }}
+                <h1>Créer un compte</h1>
+                {{ form_row(form.firstname, {'attr': {'class': 'input pass'}}) }}
+                {{ form_row(form.lastname, {'attr': {'class': 'input pass'}}) }}
+                {{ form_row(form.email, {'attr': {'class': 'input pass'}}) }}
+                {{ form_row(form.plainPassword, {'attr': {'class': 'input pass'}}) }}
+                {{ form_row(form.agreeTerms) }}
+                <button class="inputButton">Inscrire</button>
+            <div class="text-center">
+                already have an account? <a href="{{ path('app_login') }}" id="login_id">login</a>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{% endblock %}

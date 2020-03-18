@@ -1,0 +1,140 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div id="wrapper">
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <!-- Banner -->
+                <!-- Nouveautés -->
+        <section class="Nouveautés spad">
+            <div class="container">
+                <div class="product-filter">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <div class="section-title">
+                                <h2>Nouveautés</h2>
+                            </div>
+                            <ul class="product-controls">
+                                <li data-filter="*">All</li>
+                                <li data-filter=".Mercedes">Mercedes</li>
+                                <li data-filter=".Audi">Audi</li>
+                                <li data-filter=".BMW">BMW</li>
+                                <li data-filter=".Volkswagen">Volkswagen</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="product-list">
+                    <div class="col-lg-3 col-sm-6 mix all dresses bags">
+                        <div class="single-product-item">
+                            <figure>
+                                <a href="#"><img src="{{ asset('assets/img/products/voiture1.jpg') }}" alt=""></a>
+                                <div class="p-status">new</div>
+                            </figure>
+                            <div class="product-text">
+                                <h6>Volkswagen T-Roc</h6>
+                                <p>20 000€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mix all dresses bags">
+                        <div class="single-product-item">
+                            <figure>
+                                <a href="#"><img src="{{ asset('assets/img/products/voiture2.jpg') }}" alt=""></a>
+                                <div class="p-status sale">sale</div>
+                            </figure>
+                            <div class="product-text">
+                                <h6>Volkswagen Touareg</h6>
+                                <p>50 000€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mix all shoes accesories">
+                        <div class="single-product-item">
+                            <figure>
+                                <a href="#"><img src="{{ asset('assets/img/products/voiture3.jpg') }}" alt=""></a>
+                                <div class="p-status">new</div>
+                            </figure>
+                            <div class="product-text">
+                                <h6>Mercedes-Benz Classe C</h6>
+                                <p>38 000€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mix all shoes accesories">
+                        <div class="single-product-item">
+                            <figure>
+                                <a href="#"><img src="{{ asset('assets/img/products/voiture4.jpg') }}" alt=""></a>
+                                <div class="p-status popular">popular</div>
+                            </figure>
+                            <div class="product-text">
+                                <h6>Mercedes-Benz Classe S</h6>
+                                <p>50 000€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mix all dresses shoes">
+                        <div class="single-product-item">
+                            <figure>
+                                <a href="#"><img src="{{ asset('assets/img/products/voiture5.jpg') }}" alt=""></a>
+                                <div class="p-status">new</div>
+                            </figure>
+                            <div class="product-text">
+                                <h6>BMW Série 8</h6>
+                                <p>75 000€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mix all accesories bags">
+                        <div class="single-product-item">
+                            <figure>
+                                <a href="#"><img src="{{ asset('assets/img/products/voiture6.jpg') }}" alt=""></a>
+                                <div class="p-status sale">sale</div>
+                            </figure>
+                            <div class="product-text">
+                                <h6>Audi RS3</h6>
+                                <p>48 000€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mix all dresses bags">
+                        <div class="single-product-item">
+                            <figure>
+                                <a href="#"><img src="{{ asset('assets/img/products/voiture7.jpg') }}" alt=""></a>
+                            </figure>
+                            <div class="product-text">
+                                <h6>Audi Q5</h6>
+                                <p>40 000€</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mix all accesories bags">
+                        <div class="single-product-item">
+                            <figure>
+                                <a href="#"><img src="{{ asset('assets/img/products/voiture8.jpg') }}" alt=""></a>
+                                <div class="p-status popular">popular</div>
+                            </figure>
+                            <div class="product-text">
+                                <h6>Audi Q5</h6>
+                                <p>30 000€</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- Latest Product End
+    {{ include('_partials/sidebar.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
