@@ -22,7 +22,6 @@ class ProductRepository extends ServiceEntityRepository
     public function findLastProduct()
     {
         return $this->createQueryBuilder('product')
-            ->select('product.nom, product.prix, product.model')
             ->setMaxResults(8)
             ->orderBy('product.createdAt', 'DESC')
             ->getQuery()

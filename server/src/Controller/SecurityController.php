@@ -12,7 +12,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("/login", name="app_login")
+     * @Route("/log", name="app_login")
      */
     public function login(AuthenticationUtils $authenticationUtils,
                           SerializerInterface $serializer): Response
@@ -22,12 +22,10 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        $data = $serializer->serialize($error . $lastUsername, 'json');
-        return new JsonResponse($data);
-        /*return $this->render('security/login.html.twig', [
+        return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error
-        ]);*/
+        ]);
     }
 
     /**

@@ -30,11 +30,17 @@ class Product
      */
      private $model;
 
-     /**
-      * @ORM\Column(type="float")
-      * @Groups("product:show")
-      */
+    /**
+     * @ORM\Column(type="float")
+    * @Groups("product:show")
+    */
     private $prix;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Groups("product:show")
+     */
+    private $description;
 
     /**
      * @ORM\Column(type="datetime")
@@ -80,6 +86,18 @@ class Product
     public function setPrice(float $price): self
     {
         $this->prix = $price;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

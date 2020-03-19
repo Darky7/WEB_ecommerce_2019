@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../_models/Product';
+import { Product } from '../_models/product';
 import { APIBASEURL } from './back-api'
 
 @Injectable({
@@ -19,6 +19,10 @@ export class ProductService {
 
     public getHome(){
         return this.httpClient.get(`${APIBASEURL}/product/home`);
+    }
+
+    public getDetails(id: number) {
+        return this.httpClient.get(`${APIBASEURL}/product/resume/` + id);
     }
 
     public delete(id: string) {

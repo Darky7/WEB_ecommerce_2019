@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
@@ -22,20 +22,26 @@ import {
   MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { RegisterComponent } from './register/register.component';
-
+import { RegisterComponent } from './components/register/register.component';
+import { ProductSingleComponent } from './components/product-single/product-single.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ErrorInterceptor } from './_helpers/error.interceptor'
+import { UserService } from './_services/user.service';
+import { CartService } from './_services/cart.service';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    ProfileComponent,
     RegisterComponent,
+    ProductSingleComponent,
+    ProductsComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -73,9 +79,11 @@ import { RegisterComponent } from './register/register.component';
     MatListModule,
     MatIconModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: []
+  providers: [UserService,
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
+  entryComponents: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

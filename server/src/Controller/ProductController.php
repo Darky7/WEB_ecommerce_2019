@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\BrowserKit\Request;
@@ -31,7 +32,16 @@ class ProductController extends AbstractController
     }
 
     /**
-     * @Route("/products", name="product", methods={"POST"})
+     * @Route("/product/resume/{id}", name="product_resume", methods={"GET"})
+     */
+    public function resumeProduct(ProductRepository $productRepository, Product $product)
+    {
+        $products = $productRepository->findBy(['id' => $product->getId()]);
+        return $this->json($products, 200, [], ['groups' => 'product:show']);
+    }
+
+    /**
+     * @Route("/product/create", name="product", methods={"POST"})
      */
     public function createProduct(Request $request,
                                   SerializerInterface $serializer)

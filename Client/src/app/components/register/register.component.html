@@ -1,0 +1,63 @@
+<div class="login-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 m-auto col-sm-8 col-12">
+                <div class="log-box">
+                    <div class="row">
+                        <div class="col-xl-5 col-sm-5 col-12 pad-right-0">
+                            <div class="logo-back">
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-sm-7 col-12 pad-left-0">
+                            <div class="log-content">
+                                <h1>INSCRIPTION </h1>
+                                <form [formGroup]="registerForm" (ngSubmit)="onRegisterSubmit()">
+                                    <div class="log-body">
+                                        <div class="form-group myr-top">
+                                            <input type="text" formControlName="firstname" required class="form-control custom" placeholder="Nom">
+                                            <div class="alert alert-danger d-flex justify-content-center" *ngIf="submitted && formValue.firstname.errors">
+                                                <div *ngIf="formValue.firstname.errors.required">Le nom est requis
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group myr-top">
+                                            <input type="text" formControlName="lastname" required class="form-control custom" placeholder="Prénom">
+                                            <div class="alert alert-danger d-flex justify-content-center" *ngIf="submitted && formValue.lastname.errors">
+                                                <div *ngIf="formValue.lastname.errors.required">Le prénom est requis
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group myr-top">
+                                            <input type="email" formControlName="email" required class="form-control custom" placeholder="Email">
+                                            <div class="alert alert-danger d-flex justify-content-center" *ngIf="submitted && formValue.email.errors">
+                                                <div *ngIf="formValue.email.errors.required">L'adresse mail est requis
+                                                </div>
+                                                <div *ngIf="formValue.email.errors.email">L'adresse mail n'est pas valide
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group myr-top">
+                                            <input type="passowrd" formControlName="password" required class="form-control custom" placeholder="Mot de passe">
+                                            <div class="alert alert-danger d-flex justify-content-center" *ngIf="submitted && formValue.password.errors">
+                                                <div *ngIf="formValue.password.errors.required">Le mot de passe est requis
+                                                </div>
+                                                <div *ngIf="formValue.password.errors.minlength">Le mot de passe doit contenir au moins 8 caractères</div>
+                                            </div>
+                                        </div>
+                                        <div class="log-btn text-center">
+                                            <button class="btn-theme1" type="submit">Inscription</button>
+                                        </div>
+                                        <div class="log-bottom-cotent">
+                                            <p>Créer un compte <a href="/login">Connexion</a>&nbsp;
+                                                <a href="/home">Accueil</a></p>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
