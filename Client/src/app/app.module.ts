@@ -32,6 +32,7 @@ import { ErrorInterceptor } from './_helpers/error.interceptor'
 import { UserService } from './_services/user.service';
 import { CartService } from './_services/cart.service';
 import { CartComponent } from './components/cart/cart.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CartComponent } from './components/cart/cart.component';
     RegisterComponent,
     ProductSingleComponent,
     ProductsComponent,
-    CartComponent
+    CartComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

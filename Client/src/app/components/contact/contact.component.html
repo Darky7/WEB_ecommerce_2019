@@ -1,0 +1,103 @@
+<body>
+    <mat-toolbar color="primary">
+        <span>LES BAGNOLES</span>
+        <span class="menu-spacer"></span>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button mat-button [routerLink]="'/home'" routerLinkActive="active"> Accueil</button>
+            <button mat-button [routerLink]="'/products'" routerLinkActive="active"> Nos produits</button>
+            <button mat-button [routerLink]="'/contact'" routerLinkActive="active"> Nous contacter</button>
+        </div>
+        <span class="example-spacer"></span>
+        <button mat-button [routerLink]="'/cart'" routerLinkActive="active">
+            <mat-icon>shopping_cart</mat-icon>Mon panier
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="menuProfile">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #menuProfile="matMenu">
+            <button *ngIf="!isLoggedIn" mat-menu-item [routerLink]="'/login'" routerLinkActive="active">
+                <mat-icon>person</mat-icon> Connexion
+            </button>
+            <button *ngIf="!isLoggedIn" mat-menu-item [routerLink]="'/register'" routerLinkActive="active">
+                <mat-icon>person_add</mat-icon> Inscription
+            </button>
+            <button *ngIf="isLoggedIn" (click)="logOff()" mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon> Déconnexion
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+    <section>
+        <div class="gap gray-bg">
+            <div class="thm-container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="contact-form-content">
+                            <div class="title">
+                                <span>Contactez-nous</span>
+                                <h2>Message</h2>
+                            </div>
+                            <!-- /.title -->
+                            <div class="d-flex justify-content-center">
+                                <form class="contact-form" novalidate="novalidate">
+                                    <input type="text" name="name" placeholder="Nom et prénom">
+                                    <input type="text" name="email" placeholder="Adresse email">
+                                    <textarea name="message" placeholder="Message"></textarea>
+                                    <button type="submit" class="thm-btn yellow-bg">Soumettre</button>
+                                    <div class="form-result"></div>
+                                    <!-- /.form-result -->
+                                </form>
+                            </div>
+                        </div>
+                        <!-- /.contact-form-content -->
+                    </div>
+                    <!-- /.col-md-8 -->
+                    <div class="col-md-4">
+                        <div class="contact-info text-center">
+                            <div class="title text-center">
+                                <span>Contact info</span>
+                                <h2>Details</h2>
+                            </div>
+                            <!-- /.title -->
+                            <div class="single-contact-info">
+                                <h4>Adresse</h4>
+                                <p>88 New Street, Washington DC <br> United States, America</p>
+                            </div>
+                            <!-- /.single-contact-info -->
+                            <div class="single-contact-info">
+                                <h4>Phone</h4>
+                                <p>Local: 222 999 888 <br> Mobile: 000 8888 999</p>
+                            </div>
+                            <!-- /.single-contact-info -->
+                            <div class="single-contact-info">
+                                <h4>Email</h4>
+                                <p>needhelp@lesbagnoles.com <br> inquiry@lesbagnoles.com</p>
+                            </div>
+                            <!-- /.single-contact-info -->
+                            <div class="single-contact-info">
+                                <h4>Follow</h4>
+                                <div class="social">
+                                    <a href="#" class="fab fa-twitter hvr-pulse"></a>
+                                    <!--  
+                                    -->
+                                    <a href="#" class="fab fa-pinterest hvr-pulse"></a>
+                                    <!--  
+                                    -->
+                                    <a href="#" class="fab fa-facebook-f hvr-pulse"></a>
+                                    <!--  
+                                    -->
+                                    <a href="#" class="fab fa-youtube hvr-pulse"></a>
+                                </div>
+                                <!-- /.social -->
+                            </div>
+                            <!-- /.single-contact-info -->
+                        </div>
+                        <!-- /.contact-info -->
+                    </div>
+                    <!-- /.col-md-4 -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </div>
+    </section>
+</body>
